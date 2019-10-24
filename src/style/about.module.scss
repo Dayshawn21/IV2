@@ -1,0 +1,22 @@
+.about {
+	display: flex;
+	justify-content: space-evenly;
+
+	.aboutLeft {
+		margin: 2rem;
+	}
+	Img {
+		align-self: center;
+	}
+}
+.aboutWord {
+	display: flex;
+	flex-direction: column;
+	h1 {
+		text-align: center;
+	}
+}
+
+Img {
+	align-self: center;
+}
