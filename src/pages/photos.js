@@ -4,6 +4,13 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import SEO from '../components/seo';
 import photoStyle from '../style/photo.module.scss';
+import IMG1 from '../images/gallery/Screenshot_20190328-194308_Instagram.jpg';
+import IMG2 from '../images/gallery/Screenshot_20190328-194349_Instagram.jpg';
+import IMG3 from '../images/gallery/Screenshot_20190328-194416_Instagram.jpg';
+import IMG4 from '../images/gallery/Screenshot_20190328-194448_Instagram.jpg';
+import IMG5 from '../images/gallery/Screenshot_20190328-194513_Instagram.jpg';
+import IMG6 from '../images/gallery/Screenshot_20190328-194607_Instagram.jpg';
+import IMG7 from '../images/gallery/Screenshot_20190328-195354_Instagram.jpg';
 
 const Photos = () => {
 	const data = useStaticQuery(graphql`
@@ -12,8 +19,8 @@ const Photos = () => {
 				nodes {
 					id
 					childImageSharp {
-						fixed(width: 250, height: 300) {
-							...GatsbyImageSharpFixed
+						fluid(maxWidth: 300, maxHeight: 250) {
+							...GatsbyImageSharpFluid
 						}
 					}
 				}
@@ -31,12 +38,36 @@ const Photos = () => {
 
 	return (
 		<Layout>
-			<SEO title="Home" />
+			<div className={photoStyle.container}>
+				<h1 className="text-center">Photos </h1>
+				<hr/>
 
-			<h1>Photos </h1>
-
-			<div className={photoStyle.gallery}>
-				{data.images.nodes.map((image) => <Img key={image.id} fixed={image.childImageSharp.fixed} />)}
+				<div className={photoStyle.gallery}>
+					<div className={photoStyle.picture}>
+						<img src={IMG1} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG2} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG3} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG4} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG5} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG6} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG7} alt="" srcset="" />
+					</div>
+					<div className={photoStyle.picture}>
+						<img src={IMG1} alt="" srcset="" />
+					</div>
+				</div>
 			</div>
 		</Layout>
 	);

@@ -1,34 +1,32 @@
 import React from 'react';
-import Portraits from 'react-icons/lib/md/photo-camera';
-import Love from 'react-icons/lib/md/favorite';
-import LifeStyle from 'react-icons/lib/io/plane';
-import Sport from 'react-icons/lib/go/jersey';
+import { useSpring, animated, interpolate } from 'react-spring';
+import heroStyle from '../style/hero.module.scss';
 
-const Services = () => {
+const Service = () => {
+	const { o, x, y } = useSpring({
+		from   : { o: 0, y: 0, x: 0 },
+		o      : 800,
+		x      : 1000,
+		y      : 500,
+		config : { duration: 4000 }
+	});
+
 	return (
-		<section className="p-2 container service-section">
-			<h1 className="large text-center p-1">Services</h1>
-			<hr />
-			<div className="services p-2">
-				<div className="service">
-					<Portraits className="icon" />
-					<p className="lead">Portraits</p>
-				</div>
-				<div className="service">
-					<Love className="icon" />
-					<p className="lead">Engagement/Weddings</p>
-				</div>
-				<div className="service">
-					<Sport className="icon" />
-					<p className="lead">Sports</p>
-				</div>
-				<div className="service">
-					<LifeStyle className="icon" />
-					<p className="lead">Lifestsyle</p>
-				</div>
+		<div className={heroStyle.service}>
+			<div>
+				<animated.div>{o.interpolate((n) => n.toFixed(0))}</animated.div>
+				<h3> Smiles Caught</h3>
 			</div>
-		</section>
+			<div>
+				<animated.div>{x.interpolate((n) => n.toFixed(0))}</animated.div>
+				<h3> Satisfied Customer </h3>
+			</div>
+			<div>
+				<animated.div>{y.interpolate((n) => n.toFixed(0))}</animated.div>
+				<h3> Event Done </h3>
+			</div>
+		</div>
 	);
 };
 
-export default Services;
+export default Service;

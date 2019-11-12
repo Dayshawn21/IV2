@@ -1,0 +1,64 @@
+.hero {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/studio.jpg"); /* The image used */
+	background-color: #cccccc; /* Used if the image is unavailable */
+	height: 75vh; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+}
+.text-center {
+	text-align: center;
+}
+.herocontent {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+h1 {
+	font-size: 4rem;
+}
+
+/* Forms */
+input {
+	margin: 1.2rem 0;
+}
+
+.form-text {
+	display: block;
+	margin-top: 0.3rem;
+	color: #888;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='date'],
+input[type='hidden'],
+select,
+textarea {
+	display: block;
+	width: 80%;
+	padding: 0.4rem;
+	font-size: 1.2rem;
+	border: 1px solid #ccc;
+}
+
+input[type='submit'],
+button {
+	font: inherit;
+}
+
+.social {
+	font-size: 20;
+}
+
+.service {
+	display: flex;
+	justify-content: space-around;
+	padding: 2rem;
+	text-align: center;
+	font-size: 2.5rem;
+}
