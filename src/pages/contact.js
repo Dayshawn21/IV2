@@ -34,7 +34,7 @@ const Contact = () => {
 					</div>
 				</form>
 				<div className="text-center">
-					<h1>Social Media's</h1>
+					<h1>Social Media</h1>
 					<hr />
 					<br />
 					<FacebookIcon color="primary" style={{ fontSize: '200px' }} />
